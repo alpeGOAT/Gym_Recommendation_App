@@ -149,6 +149,29 @@ class GymRecommendationApp:
             font=("Segoe UI", 12, "bold")
         )
         self.results_title.pack(anchor="w", pady=(18, 8))
+        ttk.Label(
+            container,
+            text=(
+                "Support: percentage of all workouts containing both exercises.\n"
+                "Confidence: percentage of workouts with your selected exercise "
+                "that also contain the recommended exercise.\n"
+                "Lift: how much more common the recommended exercise is in workouts "
+                "containing your selection compared with all workouts. "
+                "A value above 1 indicates a positive association."
+            ),
+            wraplength=740,
+            justify="left"
+        ).pack(anchor="w", pady=(0, 10))
+
+        ttk.Label(
+            container,
+            text=(
+                "Recommendations reflect patterns in the dataset. "
+                "They are not personalized training prescriptions."
+            ),
+            wraplength=740,
+            justify="left"
+        ).pack(anchor="w", pady=(0, 10))
 
         table_frame = ttk.Frame(container)
         table_frame.pack(fill="both", expand=True)
